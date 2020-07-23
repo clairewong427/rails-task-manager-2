@@ -1,0 +1,15 @@
+<h1>My tasks</h1>
+
+  <% @tasks.each do |task| %>
+    <p>
+      <% if task.completed == true %>
+        &#9745
+      <% else %>
+        &#9744
+      <% end %>
+      <%= link_to task.title,task_path(task.id) %>
+    </p>
+  <% end %>
+
+<%= link_to "Add new task", new_task_path %>
+
